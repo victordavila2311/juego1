@@ -35,10 +35,13 @@ class Enemigo:
         if(other.x >= self.x) and (other.x <= self.x+self.w) and (other.y >= self.y) and (other.y <= self.y+self.w):
             self.alive = False
             other.alive = False
+            return True
+        return False
 
 class Morado(Enemigo):
     def __init__(self, xo, x, y, w):
         Enemigo.__init__(self, xo, x, y, w)
+        self.puntaje=40
 
     def draw(self, screen, cambio):
         if(self.x >= self.xo+(7*self.w)):
@@ -58,6 +61,7 @@ class Morado(Enemigo):
 class Verde(Enemigo):
     def __init__(self, xo, x, y, w):
         Enemigo.__init__(self, xo, x, y, w)
+        self.puntaje=30
 
     def draw(self, screen, cambio):
         if(self.x >= self.xo+(5*self.w)):
@@ -77,6 +81,7 @@ class Verde(Enemigo):
 class Rojo(Enemigo):
     def __init__(self, xo, x, y, w):
         Enemigo.__init__(self, xo, x, y, w)
+        self.puntaje=50
 
     def draw(self, screen, cambio):
         if(self.x >= self.xo+(7*self.w)):
@@ -96,6 +101,7 @@ class Rojo(Enemigo):
 class Jefe(Enemigo):
     def __init__(self, xo, x, y, w):
         Enemigo.__init__(self, xo, x, y, w)
+        self.puntaje=60
 
     def draw(self, screen, cambio):
         if(self.x >= self.xo+(7*self.w)):
